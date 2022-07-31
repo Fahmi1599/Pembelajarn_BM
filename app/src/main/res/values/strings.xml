@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Pembelajaran BM</string>
+
+
+
+
+    <string name="question_1">Soal Nomor 1 \n Enode B mempunyai 2 fungsi yaitu</string>
+    <string name="answer_1a">A. Sebagai radio transmitter dan receiver, Mengontrol low level operation Mobile
+User dengan mengirim pesan seperti saat handover</string>
+    <string name="answer_1b">B. memiliki fungsi menangani sisi radio akses dari UE ke jaringan core, Sebagai radio
+transmitter dan receiver.</string>
+    <string name="answer_1c">C. Sebagai radio transmitter dan receiver, fungsinya mendukung akses komunikasi
+dan penerusan paket traffik saat UE melakukan handover.</string>
+    <string name="answer_1d">
+        D. Mengontrol low level operator Mobile user dengan mengirim pesan seperti saat
+    </string>
+
+    <string name="question_2">Soal Nomor 2 \n Kepanjangan dari SRVCC</string>
+    <string name="answer_2a">A. Single Radio Voice Call Continuity</string>
+    <string name="answer_2b">B. Single Radiasi Voice Call community</string>
+    <string name="answer_2c">C. System radio Voice Call Continuty</string>
+    <string name="answer_2d">D. Single Radio Voice Call Comunnity</string>
+    
+    <string name="question_3">Soal Nomor 3 \n Apa itu VoLTE</string>
+    <string name="answer_3a">A. suatu informasi dibawa oleh suatu symbol yang berisikan bit-bit informasi</string>
+    <string name="answer_3b">B. bisa diartikan sebagai teknologi yang memungkinkan kita untuk
+melakukan panggilan suara dengan menggunakan jaringan 4G LTE.</string>
+    <string name="answer_3c">C. Suatu sinyal yang ditransmisikan dapat dipetakan kedalam beberapa domain,
+baik domain waktu maupun domain frekuensi.</string>
+    <string name="answer_3d">D. Merupakan jenis modulasi multicarrier yang memiliki efisiensi frekuensi yang
+lebih bedar dibandingkan dengan modulasi.
+    </string>
+
+    <string name="question_4">Soal Nomor 4 \n Keunggulan dari OFDMA</string>
+    <string name="answer_4a">A. Pemakaian rentang frekuensi yang lebih kecil, Kuat terhadap
+frequency selective fading, tidak sensitive terhadap delay spread</string>
+
+
+
+
+    <string name="question_5">Soal Nomor 5 \n Sebutkan pengertian dari RSRP</string>
+
+</resources>

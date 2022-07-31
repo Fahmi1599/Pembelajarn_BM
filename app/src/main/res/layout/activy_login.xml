@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:gravity="center"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="40sp"
+        android:fontFamily="@font/poppins_bold"
+        android:textColor="@color/white"
+        android:layout_margin="16dp"
+        android:text="Login"/>
+
+
+    <EditText
+        android:id="@+id/et_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:fontFamily="@font/poppins_medium"
+        android:textSize="24sp"
+        android:inputType="textEmailAddress"
+        android:hint="email"/>
+
+    <EditText
+        android:id="@+id/et_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:textColorHint="@color/white"
+        android:textSize="24sp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/poppins_medium"
+        android:inputType="textPassword"
+        android:hint="password"
+        />
+
+    <Button
+        android:id="@+id/button_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:textSize="20dp"
+        android:textAllCaps="false"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Login"
+        android:background="@drawable/rounded_button_login"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="16dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Don't have account?"
+            android:textColor="@color/white"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/toRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Register Here"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/poppins_bold"
+            app:layout_constraintStart_toEndOf="@+id/textView"
+            tools:ignore="MissingConstraints" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

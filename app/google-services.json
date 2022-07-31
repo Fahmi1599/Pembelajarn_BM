@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "317888037531",
+    "project_id": "media-pembelajaran-1b8e3",
+    "storage_bucket": "media-pembelajaran-1b8e3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:317888037531:android:afcda3d1327edcb2563c3e",
+        "android_client_info": {
+          "package_name": "com.skiripsi.pembelajaranbm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "317888037531-bbrchqsn7gns8s575g9hdnktm280ta3e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.skiripsi.pembelajaranbm",
+            "certificate_hash": "48dc81d2cff50d9c5fdcc75fc76ce5a436e04468"
+          }
+        },
+        {
+          "client_id": "317888037531-asvqmfbpc4nol47cs32ddmlkt09ilupe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBaQJFfAPulC5IS0umn_Nxh63iQ4F6aQ0A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "317888037531-asvqmfbpc4nol47cs32ddmlkt09ilupe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/colorPrimaryDark"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="40sp"
+        android:fontFamily="@font/poppins_bold"
+        android:textColor="@color/white"
+        android:layout_margin="16dp"
+        android:text="Register"/>
+
+    <EditText
+        android:id="@+id/et_email_regist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:fontFamily="@font/poppins_medium"
+        android:layout_margin="16dp"
+        android:textColorHint="@color/white"
+        android:textSize="24sp"
+        android:inputType="textEmailAddress"
+        android:hint="email"/>
+
+    <EditText
+        android:id="@+id/et_password_regist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:textSize="24sp"
+        android:inputType="textPassword"
+        android:fontFamily="@font/poppins_medium"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        android:hint="password" />
+
+    <EditText
+        android:id="@+id/et_namaDepan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:textSize="24sp"
+        android:fontFamily="@font/poppins_medium"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:inputType="text"
+        android:hint="Nama Depan" />
+
+
+    <EditText
+        android:id="@+id/et_namaBelakang"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        android:fontFamily="@font/poppins_medium"
+        android:textSize="24sp"
+        android:inputType="text"
+        android:hint="Nama Belakang" />
+
+    <Button
+        android:id="@+id/buttonRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:textSize="20dp"
+        android:textAllCaps="false"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Register"
+        android:background="@drawable/rounded_button_login"/>
+
+
+</LinearLayout>
