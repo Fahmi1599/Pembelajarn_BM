@@ -1,12 +1,11 @@
 package com.skiripsi.pembelajaranbm.ui;
 
-import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -22,12 +21,17 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.skiripsi.pembelajaranbm.R;
 import com.skiripsi.pembelajaranbm.data.User;
+import com.squareup.picasso.Picasso;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class mainmenu extends AppCompatActivity {
 
     TextView mulaiBelajar,mulaiQuiz,namaUser,dataHasilQuiz;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
+    ImageView setting;
+    CircleImageView profPic;
 
     private FirebaseUser user;
     private FirebaseAuth auth;
@@ -41,6 +45,8 @@ public class mainmenu extends AppCompatActivity {
         mulaiQuiz = findViewById(R.id.mulai_quiz);
         namaUser = findViewById(R.id.nameUser);
         dataHasilQuiz = findViewById(R.id.history_quiz);
+        setting = findViewById(R.id.setting);
+        profPic = findViewById(R.id.imageView);
 
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
@@ -52,7 +58,13 @@ public class mainmenu extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 User user = snapshot.getValue(User.class);
-                namaUser.setText("Hi "+user.getFullname());
+                namaUser.setText("Hi ,"+user.getFullname());
+                String Profilphoto= user.getPhotoProfile();
+                if (Profilphoto.equals("")){
+                    Picasso.with(getApplicationContext()).load(R.drawable.ic_baseline_account_circle_24).into(profPic);
+                } else {
+                    Picasso.with(getApplicationContext()).load(Profilphoto).placeholder(R.drawable.ic_baseline_account_circle_24).into(profPic);
+                }
 
             }
 
@@ -81,12 +93,22 @@ public class mainmenu extends AppCompatActivity {
             }
         });
 
-        dataHasilQuiz.setOnClickListener(new View.OnClickListener() {
+        setting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                Intent intent = new Intent(getApplicationContext(), com.skiripsi.pembelajaranbm.ui.setting.class);
+                startActivity(intent);
+
             }
         });
+
+//        dataHasilQuiz.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(getApplicationContext(),QuizActivity.class);
+//                startActivity(intent);
+//            }
+//        });
 
     }
 
@@ -114,7 +136,7 @@ public class mainmenu extends AppCompatActivity {
                                     int which)
                             {
 
-                                Intent intent = new Intent(getApplicationContext(),question1.class);
+                                Intent intent = new Intent(getApplicationContext(),QuizActivity.class);
                                 startActivity(intent);
                                 // send data from the
                                 // AlertDialog to the Activity

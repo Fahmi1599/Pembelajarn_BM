@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -27,6 +28,8 @@ public class question1 extends AppCompatActivity {
     RadioButton radioButton2;
     RadioButton radioButton3;
     RadioButton radioButton4;
+    ImageView back;
+    CountDownTimer countDownTimer;
 
     boolean isAnswer = false;
     private int isSelected = -1;
@@ -42,7 +45,14 @@ public class question1 extends AppCompatActivity {
         radioButton2 = findViewById(R.id.rb_2);
         radioButton3 = findViewById(R.id.rb_3);
         radioButton4 = findViewById(R.id.rb_4);
+        back = findViewById(R.id.back);
 
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         setTimer();
         setAnswer();
 
@@ -84,15 +94,19 @@ public class question1 extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"Silahkan pilih jawaban",Toast.LENGTH_LONG).show();
                 } else {
                     Intent intent = new Intent(getApplicationContext(),question2.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     intent.putExtra("Answer1",String.valueOf(isAnswer));
+                    countDownTimer.cancel();
+
                     startActivity(intent);
+
                 }
             }
         });
     }
 
     private void setTimer() {
-        new CountDownTimer(121000,1000){
+        countDownTimer = new CountDownTimer(61000,1000){
 
             @Override
             public void onTick(long millisUntilFinished) {
@@ -110,14 +124,34 @@ public class question1 extends AppCompatActivity {
                 if (radioGroup.getCheckedRadioButtonId() == -1){
                     Intent intent = new Intent(getApplicationContext(),question2.class);
                     intent.putExtra("Answer1","false");
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                 } else {
                     Intent intent = new Intent(getApplicationContext(),question2.class);
                     intent.putExtra("Answer1",String.valueOf(isAnswer));
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                 }
 
             }
         }.start();
+    }
+
+//    @Override
+//    protected void onRestart() {
+//        super.onRestart();
+//        setTimer();
+//        setAnswer();
+//    }
+
+    @Override
+    public void onBackPressed() {
+
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        countDownTimer.start();
     }
 }

@@ -11,12 +11,19 @@ import com.skiripsi.pembelajaranbm.R;
 
 public class datahasilquiz extends AppCompatActivity {
 
+    public static final String EXTRA_SCORE = "extraScore";
+
     ImageView back;
+
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_datanilai_quiz);
+
+
+
 
         back = findViewById(R.id.back);
 

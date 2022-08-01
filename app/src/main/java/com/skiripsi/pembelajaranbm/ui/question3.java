@@ -27,6 +27,7 @@ public class question3 extends AppCompatActivity {
     RadioButton radioButton2;
     RadioButton radioButton3;
     RadioButton radioButton4;
+    CountDownTimer countDownTimer;
 
     boolean isAnswer = false;
     private int isSelected = -1;
@@ -83,7 +84,9 @@ public class question3 extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"Silahkan pilih jawaban",Toast.LENGTH_LONG).show();
                 } else {
                     Intent intent = new Intent(getApplicationContext(),question4.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     intent.putExtra("Answer3",String.valueOf(isAnswer));
+                    countDownTimer.cancel();
                     startActivity(intent);
                 }
             }
@@ -91,7 +94,7 @@ public class question3 extends AppCompatActivity {
     }
 
     private void setTimer() {
-        new CountDownTimer(121000,1000){
+        countDownTimer = new CountDownTimer(61000,1000){
 
             @Override
             public void onTick(long millisUntilFinished) {
@@ -107,14 +110,22 @@ public class question3 extends AppCompatActivity {
             public void onFinish() {
                 if (radioGroup.getCheckedRadioButtonId() == -1){
                     Intent intent = new Intent(getApplicationContext(),question4.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     intent.putExtra("Answer3","false");
                     startActivity(intent);
                 } else {
                     Intent intent = new Intent(getApplicationContext(),question4.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     intent.putExtra("Answer3",String.valueOf(isAnswer));
                     startActivity(intent);
                 }
             }
         }.start();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        countDownTimer.start();
     }
 }
