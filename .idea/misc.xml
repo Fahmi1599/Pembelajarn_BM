@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/round_white.xml" value="0.192" />
         <entry key="app/src/main/res/drawable/rounded_button_login.xml" value="0.144" />
+        <entry key="app/src/main/res/layout/activity_about_app.xml" value="0.25951261222744765" />
         <entry key="app/src/main/res/layout/activity_datanilai_quiz.xml" value="0.2" />
         <entry key="app/src/main/res/layout/activity_detail_materi.xml" value="0.13039760581445062" />
         <entry key="app/src/main/res/layout/activity_list_materi.xml" value="0.24547101449275363" />
@@ -24,7 +26,9 @@
         <entry key="app/src/main/res/layout/activity_result.xml" value="0.2659256092347157" />
         <entry key="app/src/main/res/layout/activity_setting.xml" value="0.2659256092347157" />
         <entry key="app/src/main/res/layout/activy_login.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/adapter_custom_result.xml" value="0.33" />
         <entry key="app/src/main/res/layout/custom_dialog.xml" value="0.2659256092347157" />
+        <entry key="app/src/main/res/layout/custom_dialog_logout.xml" value="0.25951261222744765" />
         <entry key="app/src/main/res/layout/main_menu.xml" value="0.22" />
         <entry key="app/src/main/res/layout/splash_screen.xml" value="0.24547101449275363" />
       </map>

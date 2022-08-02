@@ -1,6 +1,5 @@
 package com.skiripsi.pembelajaranbm.ui;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -95,6 +94,7 @@ public class register extends AppCompatActivity {
                             hashMap.put("namaBelakang",namaBelakang);
                             hashMap.put("Email", email);
                             hashMap.put("Password", password);
+                            hashMap.put("photoProfile", "");
                             reference.setValue(hashMap);
 
                             Toast.makeText(register.this, "Register Berhasil", Toast.LENGTH_SHORT).show();

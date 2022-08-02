@@ -39,6 +39,7 @@
         <activity android:name=".ui.question4"/>
         <activity android:name=".ui.question5"/>
         <activity android:name=".ui.datahasilquiz"/>
+        <activity android:name=".ui.aboutapp"/>
         <activity android:name=".ui.question6"/>
         <activity android:name=".ui.question7"/>
         <activity android:name=".ui.question8"/>

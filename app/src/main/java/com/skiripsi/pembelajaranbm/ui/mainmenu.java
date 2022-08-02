@@ -27,7 +27,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class mainmenu extends AppCompatActivity {
 
-    TextView mulaiBelajar,mulaiQuiz,namaUser,dataHasilQuiz;
+    TextView mulaiBelajar,mulaiQuiz,namaUser,dataHasilQuiz,aboutmore;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
     ImageView setting;
@@ -45,6 +45,7 @@ public class mainmenu extends AppCompatActivity {
         mulaiQuiz = findViewById(R.id.mulai_quiz);
         namaUser = findViewById(R.id.nameUser);
         dataHasilQuiz = findViewById(R.id.history_quiz);
+        aboutmore = findViewById(R.id.aboutmore);
         setting = findViewById(R.id.setting);
         profPic = findViewById(R.id.imageView);
 
@@ -60,10 +61,10 @@ public class mainmenu extends AppCompatActivity {
                 User user = snapshot.getValue(User.class);
                 namaUser.setText("Hi ,"+user.getFullname());
                 String Profilphoto= user.getPhotoProfile();
-                if (Profilphoto.equals("")){
-                    Picasso.with(getApplicationContext()).load(R.drawable.ic_baseline_account_circle_24).into(profPic);
-                } else {
+                if (!Profilphoto.equals("")){
                     Picasso.with(getApplicationContext()).load(Profilphoto).placeholder(R.drawable.ic_baseline_account_circle_24).into(profPic);
+                } else {
+                    Picasso.with(getApplicationContext()).load(R.drawable.ic_baseline_account_circle_24).placeholder(R.drawable.ic_baseline_account_circle_24).into(profPic);
                 }
 
             }
@@ -93,6 +94,14 @@ public class mainmenu extends AppCompatActivity {
             }
         });
 
+        aboutmore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),aboutapp.class);
+                startActivity(intent);
+            }
+        });
+
         setting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -102,13 +111,13 @@ public class mainmenu extends AppCompatActivity {
             }
         });
 
-//        dataHasilQuiz.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(getApplicationContext(),QuizActivity.class);
-//                startActivity(intent);
-//            }
-//        });
+        dataHasilQuiz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),datahasilquiz.class);
+                startActivity(intent);
+            }
+        });
 
     }
 

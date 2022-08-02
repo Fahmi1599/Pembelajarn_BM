@@ -44,7 +44,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class setting extends AppCompatActivity {
 
     CircleImageView profPic;
-    TextView email,nama;
+    TextView email,nama,logout;
     ImageView back;
 
     private StorageReference mStorageRef;
@@ -71,6 +71,7 @@ public class setting extends AppCompatActivity {
         email = findViewById(R.id.email);
         nama = findViewById(R.id.nama);
         back = findViewById(R.id.back);
+        logout = findViewById(R.id.logout);
 
         storage = FirebaseStorage.getInstance("gs://media-pembelajaran-1b8e3.appspot.com/");
         mStorageRef = storage.getReference();
@@ -81,6 +82,7 @@ public class setting extends AppCompatActivity {
         user = auth.getCurrentUser();
         UserId = user.getUid();
 
+        profPic.setVisibility(View.VISIBLE);
         databaseReference2.child(UserId).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -111,16 +113,26 @@ public class setting extends AppCompatActivity {
             }
         });
 
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showAllertdialogLogin();
+
+            }
+        });
+
         databaseReference2.child(UserId).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 User user=snapshot.getValue(User.class);
                 Profilphoto= user.getPhotoProfile();
-                if (Profilphoto.equals("")){
-                    Picasso.with(getApplicationContext()).load(R.drawable.ic_baseline_account_circle_24).into(profPic);
-                } else {
+
+                if (!Profilphoto.equals("")){
                     Picasso.with(getApplicationContext()).load(Profilphoto).placeholder(R.drawable.ic_baseline_account_circle_24).into(profPic);
+                } else {
+                    Picasso.with(getApplicationContext()).load(R.drawable.ic_baseline_account_circle_24).placeholder(R.drawable.ic_baseline_account_circle_24).into(profPic);
                 }
+
             }
 
             @Override
@@ -128,6 +140,53 @@ public class setting extends AppCompatActivity {
 
             }
         });
+    }
+
+    private void showAllertdialogLogin() {
+        AlertDialog.Builder builder
+                = new AlertDialog.Builder(this);
+
+        // set the custom layout
+        final View customLayout
+                = getLayoutInflater()
+                .inflate(
+                        R.layout.custom_dialog_logout,
+                        null);
+        builder.setView(customLayout);
+
+        // add a button
+        builder
+                .setNegativeButton(
+                        "Close", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+
+                            }
+                        }
+                )
+                .setPositiveButton(
+                        "OK",
+                        new DialogInterface.OnClickListener() {
+
+                            @Override
+                            public void onClick(
+                                    DialogInterface dialog, int which)
+                            {
+
+                               Intent intent = new Intent(getApplicationContext(),login.class);
+                               intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                               auth.signOut();
+                               startActivity(intent);
+                                // send data from the
+                                // AlertDialog to the Activity
+                            }
+                        });
+
+        // create and show
+        // the alert dialog
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 
     private void chooseProfile() {
