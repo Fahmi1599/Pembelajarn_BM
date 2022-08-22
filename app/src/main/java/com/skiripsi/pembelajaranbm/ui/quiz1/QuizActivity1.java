@@ -119,6 +119,9 @@ public class QuizActivity1 extends AppCompatActivity {
             if (currentQuestion.getQuestion().equals("Gambar4G")){
                 textViewQuestion.setVisibility(View.GONE);
                 iv.setVisibility(View.VISIBLE);
+            } else {
+                iv.setVisibility(View.GONE);
+                textViewQuestion.setVisibility(View.VISIBLE);
             }
             rb1.setText(currentQuestion.getOption1());
             rb2.setText(currentQuestion.getOption2());

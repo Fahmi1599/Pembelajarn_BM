@@ -17,7 +17,7 @@ import java.util.List;
 
 public class QuizDbHelper1  extends SQLiteOpenHelper {
 
-    private static final String DATABASE_NAME = "materi1.db";
+    private static final String DATABASE_NAME = "materi1six.db";
     private static final int DATABASE_VERSION = 1;
 
     private SQLiteDatabase db;
@@ -60,8 +60,9 @@ public class QuizDbHelper1  extends SQLiteOpenHelper {
                 , "C. Evolved Prosses Core" ,"D. Engineer Packet Core"
                 , 2);
         addQuestion(q3);
-        Question q4 = new Question("Gambar4G", "A. Arsitektur Jaringan 2G" ,
-                "B. Arsitektur Jaringan 3G"
+        Question q4 = new Question("Gambar4G"
+                , "A. Arsitektur Jaringan 2G"
+                , "B. Arsitektur Jaringan 3G"
                 , "C. Arsitektur Jaringan 4G"
                 ,"D. Arsitektur Jaringan 3.5G"
                 , 3);
