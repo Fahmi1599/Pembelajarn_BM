@@ -95,12 +95,37 @@ public class register extends AppCompatActivity {
                             hashMap.put("Email", email);
                             hashMap.put("Password", password);
                             hashMap.put("photoProfile", "");
-                            reference.setValue(hashMap);
+                            reference.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if (SSuser.isEmailVerified()) {
 
-                            Toast.makeText(register.this, "Register Berhasil", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(getApplicationContext(), "Email Sudah Tervirifikasi , Silahkan Login", Toast.LENGTH_SHORT).show();
 
-                            Intent intent = new Intent(getApplicationContext(),login.class);
-                            startActivity(intent);
+                                        // UpdateUI();
+                                    } else {
+                                        //Mengecek status keberhasilan saat medaftarkan email dan sandi baru
+                                        SSuser.sendEmailVerification();
+                                        Toast.makeText(getApplicationContext(), "Daftar Akun Berhasi, Cek Pesan Masuk dan Spam Email", Toast.LENGTH_SHORT).show();
+
+//                                        reference1 = FirebaseDatabase.getInstance().getReference("User").child(UserId);
+//                                        reference2 = FirebaseDatabase.getInstance().getReference("User").child(UserId);
+//
+//                                        reference1.child("Status").setValue("Inactive");
+//                                        reference2.child("Valid_Date").setValue("Pending");
+//
+
+                                        startActivity(new Intent(getApplicationContext(), login.class));
+                                        finish();
+                                    }
+
+                                }
+                            });
+
+//                            Toast.makeText(register.this, "Register Berhasil", Toast.LENGTH_SHORT).show();
+//
+//                            Intent intent = new Intent(getApplicationContext(),login.class);
+//                            startActivity(intent);
                         } else {
                             Toast.makeText(register.this, "Register Gagal", Toast.LENGTH_SHORT).show();
                         }

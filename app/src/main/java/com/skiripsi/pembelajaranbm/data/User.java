@@ -5,6 +5,7 @@ public class User {
     private String Email;
     private String Fullname;
     private String photoProfile;
+    private String UserId;
 
     public String getEmail() {
         return Email;
@@ -16,5 +17,9 @@ public class User {
 
     public String getPhotoProfile() {
         return photoProfile;
+    }
+
+    public String getUserId() {
+        return UserId;
     }
 }

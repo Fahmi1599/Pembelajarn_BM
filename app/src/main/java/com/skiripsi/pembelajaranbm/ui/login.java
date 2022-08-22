@@ -14,6 +14,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -80,14 +81,39 @@ public class login extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()){
-                                //final FirebaseUser user = task.getResult().getUser();
-                                Intent intent = new Intent(getApplicationContext(),mainmenu.class);
-                                startActivity(intent);
-                                Toast.makeText(login.this, "Login Berhasil", Toast.LENGTH_SHORT).show();
+
+                                if (getEmail.equals("admin@gmail.com")&&getPassword.equals("admin123"))
+                                {
+                                    Intent i = new Intent(getApplicationContext() , adminactivity.class);
+                                    startActivity(i);
+
+                                } else {
+                                    final FirebaseUser user = task.getResult().getUser();
+                                    if (user.isEmailVerified()) {
+                                        Intent i = new Intent(getApplicationContext(), mainmenu.class);
+                                        startActivity(i);
+                                        Toast.makeText(getApplicationContext(), "Berhasil Masuk ", Toast.LENGTH_SHORT).show();
+                                    }
+                                    else {
+                                        Toast.makeText(getApplicationContext() , "Cek Email Verifikasi ",Toast.LENGTH_SHORT).show();
+                                    }
+                                }
+
+//                                //final FirebaseUser user = task.getResult().getUser();
+//                                Intent intent = new Intent(getApplicationContext(),mainmenu.class);
+//                                startActivity(intent);
+//                                Toast.makeText(login.this, "Login Berhasil", Toast.LENGTH_SHORT).show();
 
                             } else {
                                 Toast.makeText(login.this, "Login Gagal , Coba Lagi", Toast.LENGTH_SHORT).show();
                             }
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+
+                            Toast.makeText(getApplicationContext(), "Gagal , Coba Lagi !! ", Toast.LENGTH_SHORT).show();
+
                         }
                     });
         }
