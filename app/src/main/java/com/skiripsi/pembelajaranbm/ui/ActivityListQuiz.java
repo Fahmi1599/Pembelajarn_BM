@@ -35,6 +35,13 @@ public class ActivityListQuiz extends AppCompatActivity {
         materi9 = findViewById(R.id.materi9);
         materi10 = findViewById(R.id.materi10);
 
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
         materi2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

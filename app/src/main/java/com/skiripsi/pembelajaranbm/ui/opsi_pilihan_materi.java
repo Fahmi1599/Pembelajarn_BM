@@ -3,6 +3,7 @@ package com.skiripsi.pembelajaranbm.ui;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +17,7 @@ public class opsi_pilihan_materi extends AppCompatActivity {
     CardView cv_lihatMater;
     private String pdfLink;
     private String videoLink;
+    private ImageView back;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -26,6 +28,7 @@ public class opsi_pilihan_materi extends AppCompatActivity {
         pdfLink = getIntent().getStringExtra("linkPDF");
         videoLink = getIntent().getStringExtra("videoLink");
         cv_lihatMater = findViewById(R.id.materi);
+        back = findViewById(R.id.back);
         cv_tontonVideo = findViewById(R.id.cv_tonton_video);
 
         if (videoLink.equals("")){
@@ -34,6 +37,12 @@ public class opsi_pilihan_materi extends AppCompatActivity {
             cv_tontonVideo.setVisibility(View.VISIBLE);
         }
 
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         cv_lihatMater.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
