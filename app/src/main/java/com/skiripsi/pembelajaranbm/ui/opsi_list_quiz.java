@@ -16,6 +16,7 @@ public class opsi_list_quiz extends AppCompatActivity {
 
     CardView pg;
     CardView tf;
+    CardView essay;
     ImageView back;
 
 
@@ -26,6 +27,7 @@ public class opsi_list_quiz extends AppCompatActivity {
 
         pg = findViewById(R.id.quiz_pg_cv);
         tf = findViewById(R.id.quiz_bs_cv);
+        essay = findViewById(R.id.quiz_essay_cv);
         back = findViewById(R.id.back);
 
 
@@ -37,17 +39,25 @@ public class opsi_list_quiz extends AppCompatActivity {
             }
         });
 
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+//        back.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                finish();
+//            }
+//        });
 
         tf.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), QuizActivityBs9.class);
+                startActivity(intent);
+            }
+        });
+
+        essay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), essayActivity.class);
                 startActivity(intent);
             }
         });
