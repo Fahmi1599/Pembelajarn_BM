@@ -33,14 +33,14 @@ public class QuizDbHelper4 extends SQLiteOpenHelper {
         this.db = db;
 
         final String SQL_CREATE_QUESTIONS_TABLE = "CREATE TABLE " +
-                QuizContract2.QuestionsTable.TABLE_NAME + " ( " +
-                QuizContract2.QuestionsTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                QuizContract2.QuestionsTable.COLUMN_QUESTION + " TEXT, " +
-                QuizContract2.QuestionsTable.COLUMN_OPTION1 + " TEXT, " +
-                QuizContract2.QuestionsTable.COLUMN_OPTION2 + " TEXT, " +
-                QuizContract2.QuestionsTable.COLUMN_OPTION3 + " TEXT, " +
-                QuizContract2.QuestionsTable.COLUMN_OPTION4 + " TEXT, " +
-                QuizContract2.QuestionsTable.COLUMN_ANSWER_NR + " INTEGER" +
+                QuizContract4.QuestionsTable.TABLE_NAME + " ( " +
+                QuizContract4.QuestionsTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                QuizContract4.QuestionsTable.COLUMN_QUESTION + " TEXT, " +
+                QuizContract4.QuestionsTable.COLUMN_OPTION1 + " TEXT, " +
+                QuizContract4.QuestionsTable.COLUMN_OPTION2 + " TEXT, " +
+                QuizContract4.QuestionsTable.COLUMN_OPTION3 + " TEXT, " +
+                QuizContract4.QuestionsTable.COLUMN_OPTION4 + " TEXT, " +
+                QuizContract4.QuestionsTable.COLUMN_ANSWER_NR + " INTEGER" +
                 ")";
 
         db.execSQL(SQL_CREATE_QUESTIONS_TABLE);

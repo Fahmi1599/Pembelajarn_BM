@@ -13,6 +13,9 @@ import com.skiripsi.pembelajaranbm.R;
 import com.skiripsi.pembelajaranbm.ui.quiz1.QuizActivity1;
 import com.skiripsi.pembelajaranbm.ui.quiz2.QuizActivity2;
 import com.skiripsi.pembelajaranbm.ui.quiz4.QuizActivity4;
+import com.skiripsi.pembelajaranbm.ui.quiz7.QuizActivity7;
+import com.skiripsi.pembelajaranbm.ui.quiz8.QuizActivity8;
+import com.skiripsi.pembelajaranbm.ui.quiz9.QuizActivity9;
 
 public class ActivityListQuiz extends AppCompatActivity {
 
@@ -66,7 +69,29 @@ public class ActivityListQuiz extends AppCompatActivity {
             }
         });
 
+        materi10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), QuizActivity9.class);
+                startActivity(intent);
+            }
+        });
 
+        materi9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), QuizActivity8.class);
+                startActivity(intent);
+            }
+        });
+
+        materi8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), QuizActivity7.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }

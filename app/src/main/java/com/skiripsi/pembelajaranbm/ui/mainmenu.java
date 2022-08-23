@@ -145,7 +145,7 @@ public class mainmenu extends AppCompatActivity {
                                     int which)
                             {
 
-                                Intent intent = new Intent(getApplicationContext(), ActivityListQuiz.class);
+                                Intent intent = new Intent(getApplicationContext(), opsi_list_quiz.class);
                                 startActivity(intent);
                                 // send data from the
                                 // AlertDialog to the Activity

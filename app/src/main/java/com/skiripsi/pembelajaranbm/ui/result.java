@@ -58,7 +58,7 @@ public class result extends AppCompatActivity {
         today = simpleDateFormat.format(currentDate);
 
 
-        jumlahSalah = 10 - score;
+        jumlahSalah = 5 - score;
 
         menu.setOnClickListener(new View.OnClickListener() {
             @Override
