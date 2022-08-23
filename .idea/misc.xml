@@ -9,10 +9,15 @@
         <entry key="app/src/main/res/layout/activity_about_app.xml" value="0.25951261222744765" />
         <entry key="app/src/main/res/layout/activity_admin.xml" value="0.24932003626473254" />
         <entry key="app/src/main/res/layout/activity_data_hasil_quiz_admin.xml" value="0.3060185185185185" />
+        <entry key="app/src/main/res/layout/activity_datahasilessay_user.xml" value="0.2825994014536127" />
         <entry key="app/src/main/res/layout/activity_datanilai_quiz.xml" value="0.2" />
         <entry key="app/src/main/res/layout/activity_detai_hasil_quizadmin.xml" value="0.3060185185185185" />
+        <entry key="app/src/main/res/layout/activity_detail_essay_quizadmin.xml" value="0.2825994014536127" />
         <entry key="app/src/main/res/layout/activity_detail_materi.xml" value="0.13039760581445062" />
         <entry key="app/src/main/res/layout/activity_essay.xml" value="0.3060185185185185" />
+        <entry key="app/src/main/res/layout/activity_essay_admin_list.xml" value="0.2825994014536127" />
+        <entry key="app/src/main/res/layout/activity_essay_dua.xml" value="0.25203989120580234" />
+        <entry key="app/src/main/res/layout/activity_essay_tiga.xml" value="0.2825994014536127" />
         <entry key="app/src/main/res/layout/activity_list_materi.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_list_quiz.xml" value="0.3060185185185185" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.24547101449275363" />
@@ -43,6 +48,8 @@
         <entry key="app/src/main/res/layout/activity_video_list.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activy_login.xml" value="0.22" />
         <entry key="app/src/main/res/layout/adapter_custom_result.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/adapter_custom_skor_essay.xml" value="0.2825994014536127" />
+        <entry key="app/src/main/res/layout/adapter_history_essayquiz.xml" value="0.2834544677212484" />
         <entry key="app/src/main/res/layout/custom_dialog.xml" value="0.2659256092347157" />
         <entry key="app/src/main/res/layout/custom_dialog_logout.xml" value="0.25951261222744765" />
         <entry key="app/src/main/res/layout/data_quiz_adapter.xml" value="0.3060185185185185" />

@@ -52,7 +52,12 @@
         <activity android:name=".ui.quiz9.QuizActivity9"/>
         <activity android:name=".ui.quiz9.QuizActivityBs9"/>
         <activity android:name=".ui.detailhasilquizadmin"/>
+        <activity android:name=".ui.datahasilessayquiz"/>
         <activity android:name=".ui.essayActivity"/>
+        <activity android:name=".ui.detailEssayQuizAdmin"/>
+        <activity android:name=".ui.adminessaylist"/>
+        <activity android:name=".ui.essayduaActivity"/>
+        <activity android:name=".ui.essaytigaActivity"/>
         <activity android:name=".ui.resultessay"/>
         <activity android:name=".ui.adminactivity"/>
         <activity android:name=".ui.dataquizadmin"/>

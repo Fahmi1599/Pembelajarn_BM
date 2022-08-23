@@ -15,6 +15,7 @@ public class adminactivity extends AppCompatActivity {
 
     CardView cv_userList;
     CardView cv_dataQuiz;
+    CardView cv_essay;
     TextView tv_logout;
 
     @Override
@@ -25,6 +26,7 @@ public class adminactivity extends AppCompatActivity {
         cv_userList = findViewById(R.id.cv_listUser);
         tv_logout = findViewById(R.id.adminLogout);
         cv_dataQuiz = findViewById(R.id.datahasilquizUser);
+        cv_essay = findViewById(R.id.datahasilquizEssay);
 
         tv_logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,6 +48,14 @@ public class adminactivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), dataquizadmin.class);
+                startActivity(intent);
+            }
+        });
+
+        cv_essay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), adminessaylist.class);
                 startActivity(intent);
             }
         });

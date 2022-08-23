@@ -19,7 +19,7 @@ import com.skiripsi.pembelajaranbm.R;
 
 import java.util.HashMap;
 
-public class essayActivity extends AppCompatActivity {
+public class essaytigaActivity extends AppCompatActivity {
 
     EditText et_jawab;
     TextView text_view_question;
@@ -33,10 +33,11 @@ public class essayActivity extends AppCompatActivity {
     private long backPressedTime;
     private String soal;
     private String jawaban;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_essay);
+        setContentView(R.layout.activity_essay_tiga);
 
         et_jawab = findViewById(R.id.et_jawaban);
         text_view_question = findViewById(R.id.text_view_question);
@@ -64,16 +65,14 @@ public class essayActivity extends AppCompatActivity {
                     hashMap.put("userID",uid);
                     hashMap.put("pushKey",push_key);
                     reference.setValue(hashMap);
-                    Intent intent = new Intent(getApplicationContext(),essayduaActivity.class);
+                    Intent intent = new Intent(getApplicationContext(),resultessay.class);
                     startActivity(intent);
                 }
-
             }
         });
 
 
     }
-
 
     @Override
     public void onBackPressed() {
@@ -86,5 +85,6 @@ public class essayActivity extends AppCompatActivity {
 
         backPressedTime = System.currentTimeMillis();
     }
+
 
 }

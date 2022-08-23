@@ -27,7 +27,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class mainmenu extends AppCompatActivity {
 
-    TextView mulaiBelajar,mulaiQuiz,namaUser,dataHasilQuiz,aboutmore;
+    TextView mulaiBelajar,mulaiQuiz,namaUser,dataHasilQuiz,aboutmore,historyEssay;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
     ImageView setting;
@@ -45,6 +45,7 @@ public class mainmenu extends AppCompatActivity {
         mulaiQuiz = findViewById(R.id.mulai_quiz);
         namaUser = findViewById(R.id.nameUser);
         dataHasilQuiz = findViewById(R.id.history_quiz);
+        historyEssay = findViewById(R.id.history_essay_quiz);
         aboutmore = findViewById(R.id.aboutmore);
         setting = findViewById(R.id.setting);
         profPic = findViewById(R.id.imageView);
@@ -115,6 +116,14 @@ public class mainmenu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),datahasilquiz.class);
+                startActivity(intent);
+            }
+        });
+
+        historyEssay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),datahasilessayquiz.class);
                 startActivity(intent);
             }
         });

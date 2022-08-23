@@ -39,12 +39,12 @@ public class opsi_list_quiz extends AppCompatActivity {
             }
         });
 
-//        back.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                finish();
-//            }
-//        });
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         tf.setOnClickListener(new View.OnClickListener() {
             @Override
