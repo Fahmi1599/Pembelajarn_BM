@@ -51,7 +51,9 @@
         <activity android:name=".ui.quiz8.QuizActivity8"/>
         <activity android:name=".ui.quiz9.QuizActivity9"/>
         <activity android:name=".ui.quiz9.QuizActivityBs9"/>
+        <activity android:name=".ui.detailhasilquizadmin"/>
         <activity android:name=".ui.adminactivity"/>
+        <activity android:name=".ui.dataquizadmin"/>
         <activity android:name=".ui.QuizActivity"/>
         <activity android:name=".ui.login"/>
         <activity android:name=".ui.detail_materi"/>

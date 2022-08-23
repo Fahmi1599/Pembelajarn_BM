@@ -14,6 +14,7 @@ import com.skiripsi.pembelajaranbm.R;
 public class adminactivity extends AppCompatActivity {
 
     CardView cv_userList;
+    CardView cv_dataQuiz;
     TextView tv_logout;
 
     @Override
@@ -23,6 +24,7 @@ public class adminactivity extends AppCompatActivity {
 
         cv_userList = findViewById(R.id.cv_listUser);
         tv_logout = findViewById(R.id.adminLogout);
+        cv_dataQuiz = findViewById(R.id.datahasilquizUser);
 
         tv_logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,6 +38,14 @@ public class adminactivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), ActivityListUser.class);
+                startActivity(intent);
+            }
+        });
+
+        cv_dataQuiz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), dataquizadmin.class);
                 startActivity(intent);
             }
         });
